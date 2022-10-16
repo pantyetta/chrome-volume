@@ -1,0 +1,17 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    width: 360px;
+}
+
+ul{
+    margin: 20px;
+}
+
+li{
+    list-style: none;
+    margin: 5px 0;
+}
