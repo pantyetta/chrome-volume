@@ -1,6 +1,7 @@
 *{
     margin: 0;
     padding: 0;
+    position: relative;
 }
 
 body{
@@ -14,4 +15,28 @@ ul{
 li{
     list-style: none;
     margin: 5px 0;
+}
+
+.tab-inner{
+    display: flex;
+    align-items: center;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.icon{
+    margin: 0 10px;
+}
+
+.icon img{
+    width: 20px;
+}
+
+.title{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
 }
