@@ -7,6 +7,10 @@
         "default_popup": "popup.html"
     },
     "permissions": [
-        "tabs"
-    ]
+        "tabs",
+        "tabCapture"
+    ],
+    "background": {
+        "service_worker": "bg.js"
+    }
 }
