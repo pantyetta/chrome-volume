@@ -2,9 +2,16 @@ let id_media = document.getElementById("media");
 
 chrome.tabs.query({}, tabs => {
     // 再生中タブのみ表示
-    tabs.filter(function (tab) {
+    let tab_list = tabs.filter(function (tab) {
         return tab.audible;
-    }).map(tab => render(tab))
+    });
+    if(tab_list.length > 0){
+        tab_list.map(tab => render(tab));
+    }else{
+        const no_play = document.createElement("p");
+        no_play.appendChild(document.createTextNode("Not Play now"));
+        id_media.appendChild(no_play);
+    };
 });
 
 
@@ -18,9 +25,9 @@ function render(tab) {
 
 id_media.addEventListener('click', function (e) {
     e.path.filter(function (list) {
-        return list.nodeName == "LI"
+        return list.nodeName == "A"
     }).map(li_click => {
-        chrome.tabs.update(parseInt(li_click.querySelector("#list").dataset.tabId, 10), {
+        chrome.tabs.update(parseInt(li_click.dataset.tabId, 10), {
             active: true
         }, a => {
             chrome.windows.update(a.windowId, {

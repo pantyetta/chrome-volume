@@ -18,21 +18,22 @@ li{
 }
 
 .tab-inner{
-    display: flex;
+    display: inline-flex;
     align-items: center;
 }
 
 a{
     text-decoration: none;
     color: black;
+    max-width: 100%;
 }
 
 .icon{
-    margin: 0 10px;
+    margin: 3px 10px;
 }
 
 .icon img{
-    width: 20px;
+    height: 20px;
 }
 
 .title{
